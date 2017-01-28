@@ -1,21 +1,39 @@
 package life.time.value;
 
-import java.io.File;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Comparator;
+import net.sf.json.JSONObject;
 
 public class LTV {
 
 	public static void main(String args[]) {
 
-		File input = new File("input/input.txt");
-		System.out.println(input.getAbsolutePath());
+		Data d = new Data(); // loads the data from the txt file
+		LTV ltv = new LTV();
+		
+		ArrayList<Customer> topCustomers = ltv.topXSimpleLTVCustomers(1, d);
+		for(Customer currentCustomer : topCustomers){
+			System.out.println(currentCustomer.getCustomerId());
+		}
 
 	}
-
+	
+	
+	public boolean Ingest(Event e, Data d){
+		boolean success = false;
+	    JSONObject jsonObj = e.getJsonObject();
+	    
+	    // add this jsonObj to input file
+	    
+	    // add this to d
+	    
+		return success;
+	}
+	
 	public ArrayList<Customer> topXSimpleLTVCustomers(int x, Data d) {
 
 		// min priority queue
