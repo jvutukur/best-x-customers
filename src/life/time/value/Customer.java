@@ -1,9 +1,9 @@
 package life.time.value;
 
 import java.util.Date;
-import java.util.Comparator;
 
-public class Customer implements Comparator<Customer>{
+
+public class Customer {
 	private int customerId;
 	private Date startDate;
 	private Date endDate;
@@ -13,17 +13,38 @@ public class Customer implements Comparator<Customer>{
 		ltv = 0;
 		this.customerId = customerId;
 	}
-	public int compare(Customer c1, Customer c2){
-		if(c1.ltv > c2.ltv){
-			return 1;
-		}
-		else if(c1.ltv < c2.ltv){
-			return -1;
-		}
-		else{
-			return 0;
-		}
-		
+
+	public int getCustomerId() {
+		return customerId;
 	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public double getLtv() {
+		return ltv;
+	}
+
+	public void setLtv(double ltv) {
+		this.ltv = ltv;
+	}
+
 	
 }
